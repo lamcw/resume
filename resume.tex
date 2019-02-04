@@ -1,0 +1,108 @@
+\documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{purple} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage[scale=0.8]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+
+\usepackage[
+    backend=biber,
+    style=authortitle
+]{biblatex}
+\usepackage{filecontents}
+\begin{filecontents}{\jobname.bib}
+@article {Gamaarachchi756122,
+	author = {Gamaarachchi, Hasindu and Lam, Chun Wai and Jayatilaka, Gihan and Samarakoon, Hiruna and Simpson, Jared T. and Smith, Martin A. and Parameswaran, Sri},
+	title = {GPU Accelerated Adaptive Banded Event Alignment for Rapid Comparative Nanopore Signal Analysis},
+	elocation-id = {756122},
+	year = {2019},
+	doi = {10.1101/756122},
+	publisher = {Cold Spring Harbor Laboratory},
+	abstract = {Nanopore sequencing has the potential to revolutionise genomics by realising portable, real-time sequencing applications, including point-of-care diagnostics and in-the-field genotyping. Achieving these applications requires efficient bioinformatic algorithms for the analysis of raw nanopore signal data. For instance, comparing raw nanopore signals to a biological reference sequence is a computationally complex task despite leveraging a dynamic programming algorithm for Adaptive Banded Event Alignment (ABEA){\textemdash}a commonly used approach to polish sequencing data and identify non-standard nucleotides, such as measuring DNA methylation. Here, we parallelise and optimise an implementation of the ABEA algorithm (termed f5c) to efficiently run on heterogeneous CPU-GPU architectures. By optimising memory, compute and load balancing between CPU and GPU, we demonstrate how f5c can perform ~3-5{\texttimes} faster than the original implementation of ABEA in the Nanopolish software package. We also show that f5c enables DNA methylation detection on-the-fly using an embedded System on Chip (SoC) equipped with GPUs. Our work not only demonstrates that complex genomics analyses can be performed on lightweight computing systems, but also benefits High-Performance Computing (HPC). The associated source code for f5c along with GPU optimised ABEA is available at https://github.com/hasindu2008/f5c.},
+	URL = {https://www.biorxiv.org/content/early/2019/09/05/756122},
+	eprint = {https://www.biorxiv.org/content/early/2019/09/05/756122.full.pdf},
+	journal = {bioRxiv}
+}
+\end{filecontents}
+\addbibresource{\jobname.bib}
+
+\name{Thomas}{Lam}
+
+\title{Curriculum Vitae}
+\mobile{0438773346}
+\email{thomas@lamcw.com}
+\homepage{lamcw.com}
+\social[github]{lamcw}
+\social[linkedin]{thomaslamcw}
+
+\begin{document}
+
+\makecvtitle
+
+\section{Education}
+\cventry{2017--2019}{B.sc. Computer Science}{University of New South Wales}{Sydney}{distinction average}{%
+Focus:
+\begin{itemize}
+    \item Kernel Programming (Linux)
+    \item Artificial Intelligence
+    \item Formal Methods
+    \item Security Engineering
+\end{itemize}
+}
+
+\section{Relevant Experience}
+\cventry{Summer 2019--2020}{Software Engineer}{Yip, Tse \& Tang Solicitors \& Notaries}{Hong Kong}{freelance}{RPA using UiPath, to automate bank statement validation against database, and generating client receipts + bills, reducing human-error and boosting data entry efficiency.}
+\cventry{August 2019--December 2019}{Academic Tutor}{School of CSE, University of New South Wales}{Sydney}{}{%
+Mentoring for COMP3900 (Computer Science Project) during 2019 term 3. Responsibilities include teaching software engineering patterns, project management skills and marking reports and Python (Django) projects.
+}
+\cventry{2019--2020}{Team Lead}{CSESoc, University of New South Wales}{Sydney}{}{}
+\cventry{2018--2019}{Software Developer}{CSESoc, University of New South Wales}{Sydney}{}{%
+Worked in a team of 5 as a back-end developer to revamp the CompClub website so as to streamline their process of organising and executing outreaches. \\
+My job includes, but not limited to, developing a volunteer and general user registration system, events and workshop creation logic, and the admin panel. And as a project lead, I am also the scrum master and a communication bridge between the society directors and development team members.}
+\cventry{Summer 2018--2019}{Research Assistant}{Embedded System Laboratory, School of CSE, University of New South Wales}{Sydney}{}{%
+I worked with a Ph.D. student who was doing his research on GPU accelerated data manipulation. The project aims to reduce the adaptive banded alignment for Nanopore data by using heterogeneous computing. My work revolved around:
+\begin{itemize}
+    \item profiling hotspots in the existing Nanpolish tool and optimising event detection/methylation call, which results in a 2 to 3 times performance improvement.
+    \item optimising NVIDIA CUDA kernels by rewriting them in more compact data structures.
+    \item manually convert inefficient Python code to C code.
+    \item developing a test framework in POSIX-compliant shell script.
+    \item DevOps for the project (build system, docker, travis CI/CD, etc.).
+\end{itemize}
+}
+
+\section{Projects}
+\cvitem{\href{https://h11a.xyz}{localhost}}{Reinvents lodging with auction. Search, bid and stay in accommodation all in one site. Implemented with Django, Django Channels, Celery, and more. Deployed on AWS.}
+\cvitem{\href{https://team-sc.gitlab.io/sc-implant/}{sc-implant}}{Open-source Linux LKM rootkit designed to be stealthy and extensible.}
+\cvitemwithcomment{\href{https://gitlab.com/acchan-dev}{acchan}}{An extensible imageboard library/Android client.}{Work in progress}
+\cvitem{pylogic}{A library that provides logic programming utilities for Python.}
+\cvitemwithcomment{wlime}{A lightweight input method for Wayland.}{Work in progress}
+
+\section{Additional Involvement}
+\cventry{August 2017}{Participant}{UNIHACK}{Sydney}{}{%
+\begin{itemize}
+    \item Developed a restaurant review aggregator during a 24-hour hackathon
+    \item Scrapes through different restaurant review platform and aggregate all of them in one place, including ratings, customer reviews, etc.
+\end{itemize}}
+\cventry{March 2018}{Participant}{Microsoft Coding Competition}{Sydney}{}{Worked through programming challenges with another teammate.}
+\cventry{Winter 2017}{Volunteer}{The Maker Games, University of New South Wales Engineering}{Sydney}{}{%
+\begin{itemize}
+    \item Assisted with organising workshops and arranging a hackathon.
+    \item Provided site support during a large scale pitch event after the hackathon.
+\end{itemize}
+}
+\cventry{Winter 2016}{Sales Promoter}{EXCO Technology}{Hong Kong}{}{Developed customer servicing skills by promoting laptops and answering customers' enquiries during laptop roadshows and redemption.}
+
+\nocite{*}
+\printbibliography[title={Publications}]
+
+\section{Technical Skills}
+\cvitem{Programming}{Python, C, C++, Java, Kotlin, Haskell, Prolog, MIPS \& AVR assembly, PostgreSQL}
+\cvitem{Framework}{Django, Flask, tensorflow, JavaFx, ReactJS}
+
+\section{Languages}
+\cvitemwithcomment{English}{Fluent}{}
+\cvitemwithcomment{Cantonese}{Native}{}
+\cvitemwithcomment{Mandarin}{Intermediate}{}
+
+\end{document}
